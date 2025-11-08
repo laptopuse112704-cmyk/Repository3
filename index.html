@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Interactive Birthday Surprise Blueprint</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="birthday-app">
+
+    <!-- Scene 1: Intro -->
+    <div id="intro-scene" class="scene active">
+      <h1 id="countdown">3</h1>
+      <p>Crafting your special moment...</p>
+      <div id="message-20-years">
+        <img src="https://media.tenor.com/E9OyoaK3LC0AAAAm/peach-goma-chair-wiggle.webp" alt="Peach Goma Wiggle" class="character-img" />
+        <p>A Cutiepie was born today, <strong>20</strong> years ago!</p>
+        <button onclick="startSurprise()">Start the surprise</button>
+      </div>
+    </div>
+
+    <!-- Scene 2: Cake -->
+    <div id="cake-scene" class="scene">
+      <div id="party-banner"></div>
+      <div id="cake-display" class="cake-image">
+        <img id="cake-img" src="https://static.vecteezy.com/system/resources/thumbnails/024/639/169/small/cartoon-cake-delights-colorful-pastel-joy-for-parties-free-png.png" alt="Birthday Cake" />
+      </div>
+      <button id="cake-button" onclick="decorateCake()">🎂 Light the Candle</button>
+    </div>
+
+    <!-- Scene 3: Balloons -->
+    <div id="balloon-scene" class="scene">
+      <h2>Happy Birthday, Cutiepiee!</h2>
+      <p style="margin-top: 30px;">Pop all 4 balloons</p>
+      <div id="balloons">
+        <div class="balloon" data-word="You" onclick="popBalloon(this)"></div>
+        <div class="balloon" data-word="are" onclick="popBalloon(this)"></div>
+        <div class="balloon" data-word="a" onclick="popBalloon(this)"></div>
+        <div class="balloon" data-word="Cutiee" onclick="popBalloon(this)"></div>
+      </div>
+      <div id="word-display" style="margin-top: 20px; font-size: 2em;"></div>
+      <button id="next-button-balloons" onclick="showMoments()">Next →</button>
+    </div>
+
+    <!-- Scene 4: Moments -->
+    <div id="moments-scene" class="scene">
+      <h3>Some Sweet Moments</h3>
+      <div id="photo-stack" class="photo-stack">
+        <div class="photo-card"><img src="https://via.placeholder.com/300x200.png?text=Photo+1" alt="Photo 1" /></div>
+        <div class="photo-card"><img src="https://via.placeholder.com/300x200.png?text=Photo+2" alt="Photo 2" /></div>
+        <div class="photo-card"><img src="https://via.placeholder.com/300x200.png?text=Photo+3" alt="Photo 3" /></div>
+        <div class="photo-card"><img src="https://via.placeholder.com/300x200.png?text=Photo+4" alt="Photo 4" /></div>
+      </div>
+      <button onclick="nextPhotoCard()">Next Photo</button>
+      <button onclick="openMessage()">Open My Message</button>
+    </div>
+
+    <!-- Scene 5: Message -->
+    <div id="message-scene" class="scene">
+      <h3>A Special Message</h3>
+      <div class="message-box">
+        <p>Happy Birthday, Cutiepie! You deserve all the happiness, love, and smiles...</p>
+        <p>...Wishing you endless happiness, success, and all the sweet things life has to offer.</p>
+      </div>
+      <button onclick="showGift()">Next →</button>
+    </div>
+
+    <!-- Scene 6: Gift -->
+    <div id="gift-scene" class="scene">
+      <h3>One Last Thing...</h3>
+      <p style="margin-top: 20px;">tap the gift</p>
+      <div id="final-message" style="display: none;">
+        <p>Lots of love for you ❤️</p>
+        <p>Once again, Happy Birthday! Hope you loved your surprise!</p>
+        <button onclick="window.location.reload()">↻ Replay</button>
+      </div>
+      <div id="gift-box" onclick="openGift()"></div>
+    </div>
+
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
